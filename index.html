@@ -7,19 +7,49 @@
 </head>
 <body>
     <div id="app">
+        <!-- データバインディングv-bindでの練習 vue練習 -->
+        <input type="text" v-bind:value="message"/>
+
+        <!-- データバインディングv-if vue練習 -->
+        <p v-if="toggle">
+            hello
+        </p>
+        <!-- データバインディングv-show vue練習 -->
+        <p v-show="toggle2">
+            Ninja
+        </p>
+        <!-- データバインディングv-for vue練習 エイリアスは単数形にしておく（color等） -->
+        <ol>
+            <li v-for="language in languages">{{ language }}</li>
+        </ol>
+        <hr>
+        <!-- データバインディングv-for vue練習 keyも表示してみる（firstname等） -->
+        <ul>
+            <li v-for="(value, key) in user">{{ key }}: {{ value }}</li>
+        </ul>
+        <hr>
+        <!-- データバインディングv-on vue練習 -->
+        <button v-on:click="onclick">押してください</button>
+        <p>
+            {{ now }}
+        </p>
         <p>
             {{ message }}
         </p>
+        <hr>
+        <!-- 双方向データバインディング、v-modelの練習 vue練習 -->
         <p>
-            {{ count }}
+            <input type="text" v-model="message" />
         </p>
         <p>
-            {{ user.City }}
+            <input type="text" v-model="message" />
         </p>
-        <p>
-            {{ colors[2] }}
-        </p>
+        <hr>
+        <!-- コンポーネントの練習 -->
+        <hello-conponent></hello-conponent>
+        
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="js/main.js"></script>
