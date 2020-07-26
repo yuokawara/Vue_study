@@ -1,6 +1,6 @@
 # Vue_study
 
-自分用、Vue学習の為のリポジトリです。
+自分用、Vue学習の為のリポジトリです。<br>
 This is a repository for my own use and for learning Vue.
 
 # DEMO
@@ -16,7 +16,7 @@ This is a repository for my own use and for learning Vue.
 # Usage
 none
 # Note
-随時追加
+随時追加。<br>
 Add as needed
 
 # Author
