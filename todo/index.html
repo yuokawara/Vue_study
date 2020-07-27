@@ -9,7 +9,13 @@
 
 <body>
     <div id="app">
-        
+        <h2>ToDoリスト</h2>
+        <form v-on:submit.prevent>
+            <input type="text" v-model="newEvent" />
+            <button v-on:click="addEvent">Add New Event</button>
+        </form>
+        <!-- デバッグ用 -->
+        <pre>{{ $ data }}</pre>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
