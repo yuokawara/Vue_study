@@ -5,6 +5,7 @@
     <meta charset="utf-8">
 
     <!-- 外部css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -13,9 +14,18 @@
         <form v-on:submit.prevent>
             <input type="text" v-model="newEvent" />
             <button v-on:click="addEvent">Add New Event</button>
+            <button class="reset" v-on:click="alldeleteEvent">Reset</button>
         </form>
+        <ul>
+            <li v-for="(event, index) in events">
+                <input type="checkbox" v-model="event.isDone"/>
+                <span v-bind:class="{ done: event.isDone }">{{ event.item }}</span>
+                <span>{{ now }}</span>
+                <button v-on:click="deleteEvent(index)">Delete</button>
+            </li>
+        </ul>
         <!-- デバッグ用 -->
-        <pre>{{ $ data }}</pre>
+        <!-- <pre>{{ $data }}</pre> -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
