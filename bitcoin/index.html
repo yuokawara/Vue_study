@@ -15,13 +15,19 @@
             Error
         </section>
         <section v-else>
-            <ul>
-                <li v-for="(rate, currency) in bpi">
-                    {{ currency }} : {{ rate.rate_float | currencyDecimal }}
-                </li>
-            </ul>
-            <!-- デバッグ用 -->
-            <!-- <pre>{{ $data }}</pre> -->
+            <div v-if="loading">
+                Now Loading
+            </div>
+            <div v-else>
+                <ul>
+                    <li v-for="(rate, currency) in bpi">
+                        {{ currency }} : {{ rate.rate_float | currencyDecimal }}
+                    </li>
+                </ul>
+                <!-- デバッグ用 -->
+                <!-- <pre>{{ $data }}</pre> -->
+            </div>
+            
         </section>
     </div>
 

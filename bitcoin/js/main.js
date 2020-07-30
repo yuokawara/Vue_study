@@ -3,6 +3,7 @@ var app = new Vue({
     data: {
         bpi: null,
         hasError: false,
+        loading: true,
     },
     mounted: function() {
         // axios使用
@@ -12,7 +13,10 @@ var app = new Vue({
         }.bind(this))
         .catch(function(error) {
             console.log(error)
-            this.hasError = true;
+            this.hasError = true
+        }.bind(this))
+        .finally(function(){
+            this.loading = false
         }.bind(this))
     },
     filters: {
