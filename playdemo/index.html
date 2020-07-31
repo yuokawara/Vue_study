@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>Practice</title>
+    <meta charset="utf-8">
+
+    <!-- 外部css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            {{ message }}
+        </p>
+        <!-- v-once 一度だけ表示の後は、静的のまま表示（固定されるみたいな？） -->
+        <p v-once>
+            {{ message }}
+        </p>
+        <button v-on:click="clickHandler">Change</button>
+        <hr>
+        <!-- v-pre 要素と全ての子要素をスキップする。生のmustacheを表示したい時 XSS対策等 -->
+        <p v-pre>
+            {{ message1 }}
+        </p>
+        <hr>
+        <!-- v-html -->
+        <p>
+            {{ message1 }}
+        </p>
+        <!-- サーバーサイドから取得したhtml文を表示したいときによく使う
+        XSS脆弱性を引き起こす可能性がある。要注意 -->
+        <p v-html="message1"></p>
+        <hr>
+        <!-- v-cloak インスタンスのコンパイルが終了するまで、該当の要素をCSSで非表示にする。 -->
+        <h3>V-cloak</h3>
+        <p>
+            {{ message2 }}
+        </p>
+        <hr>
+        <!-- v-text mustacheの代わりに表示できる -->
+        <p v-text="message3"></p>
+        <hr>
+        <!-- javascriptで直接書き込める。単一式ならバインディングに含める。注意 -->
+        <p>
+            {{ number * 2 }}
+        </p>
+        <p>
+            {{ message.split('').reverse().join('') }}
+        </p>
+        <p>
+            {{ ok ? 'yes i am' : 'no i am not' }}
+        </p>
+        <hr>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
