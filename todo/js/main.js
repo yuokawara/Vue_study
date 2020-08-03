@@ -11,11 +11,9 @@ var app = new Vue({
             var event = {
                 item: this.newEvent,
                 isDone: false,
-
             };
             this.events.push(event);
             this.newEvent = '';
-
             this.now = new Date().toLocaleString();
         },
 

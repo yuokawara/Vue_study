@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Output</title>
+    <meta charset="utf-8">
+
+    <!-- 外部css -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h2>リスト</h2>
+        <form v-on:submit.prevent>
+            <input type="text" v-model="newEvent" />
+            <button v-on:click="addEvent">追加</button>
+            <button class="reset" v-on:click="alldeleteEvent">Reset</button>
+        </form>
+        <ul>
+            <li v-for="(event, index) in events">
+                <input type="checkbox" v-model="event.isDone" />
+                <span v-bind:class="{ done: event.isDone }">{{ event.item }}</span>
+                <span>{{ now }}</span>
+                <button v-on:click="deleteEvent(index)">Delete</button>
+            </li>
+        </ul>
+        <hr>
+        <!-- 画像追加 -->
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">画像を選択</h4>
+                <input type="file" ref="file" accept="image/*" @change="onFileChange($event)">
+                <img :src="imageData" v-if="imageData" style="width: 100px; height: 100;">
+                <button class="btn btn-secondary" v-if="imageData" @click="resetFile()">リセット</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
