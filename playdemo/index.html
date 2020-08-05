@@ -51,6 +51,17 @@
             {{ ok ? 'yes i am' : 'no i am not' }}
         </p>
         <hr>
+        <p>
+            {{ price | numberFormat }}
+        </p>
+        <hr>
+        <p>
+            {{ jpyprice | toUSD | numberFormat }}
+        </p>
+        <hr>
+        <p>
+            {{ text | readMore(20, '...') }}
+        </p>
     </div>
 
 
