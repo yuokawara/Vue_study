@@ -6,7 +6,7 @@ var app = new Vue({
         loading: true,
     },
     mounted: function() {
-        // axios使用
+        // axios
         axios.get('https://api.coindesk.com/v1/bpi/currentprice.json')
         .then(function(response){
             this.bpi = response.data.bpi

@@ -62,6 +62,23 @@
         <p>
             {{ text | readMore(20, '...') }}
         </p>
+        <hr>
+        <a v-bind:href="url" target="_blank">yahoo</a>
+        <!-- 省略記法 -->
+        <a :href="url" target="_blank">yahoo2</a>
+        <hr>
+        <h2>算出プロパティ</h2>
+        <p>
+            {{ message.split('').reverse().join('') }}
+        </p>
+        <hr>
+        <h2>getter,setter</h2>
+        <p>
+            base price: <input type="text" v-model="basePrice">
+        </p>
+        <p>
+            tax include: <input type="text" v-model="taxIncludedPrice">
+        </p>
     </div>
 
 
