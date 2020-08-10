@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>Watcher</title>
+    <title>Deep</title>
     <meta charset="utf-8">
 
     <!-- css -->
@@ -9,15 +9,11 @@
 </head>
 <body>
     <div id="app">
-        <p>
-            FirstName: <input type="text" v-model:value="FirstName">
-        </p>
-        <p>
-            LastName: <input type="text" v-model:value="LastName">
-        </p>
-        <p>
-            FullName: {{ FullName }}
-        </p>
+        <ul>
+            <li v-for="color in colors">
+                {{ color.name }}
+            </li>
+        </ul>
        <!-- debug -->
        <pre>{{ $data }}</pre>
     </div>
