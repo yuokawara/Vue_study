@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>transition</title>
+    <meta charset="utf-8">
+
+    <!-- css -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="show=!show">
+            push change
+        </button>
+        <transition>
+            <p v-show="show">
+                Test Transition
+            </p>
+        </transition>
+        
+       <!-- debug -->
+       <pre>{{ $data }}</pre>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
