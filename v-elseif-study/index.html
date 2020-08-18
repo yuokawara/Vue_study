@@ -9,28 +9,46 @@
 </head>
 <body>
     <div id="app">
-        <p v-if="color === 'red'">
-            stop
-        </p>
-        <p v-else-if="color === 'green'">
-            go
-        </p>
-        <p v-else-if="color === 'yellow'">
-            caution
-        </p>
-        <p v-else>
-            not all
-        </p>
+        <input type="checkbox" id="red" value="red" v-model="colors">
+        <label for="red">red</label>
+        <input type="checkbox" id="green" value="green" v-model="colors">
+        <label for="green">green</label>
+        <input type="checkbox" id="yellow" value="yellow" v-model="colors">
+        <label for="yellow">yellow</label>
+        
         <hr>
+        <input type="radio" id="red2" value="red2" v-model="color2">
+        <label for="red2">red2</label>
+        <input type="radio" id="green2" value="green2" v-model="color2">
+        <label for="green2">green2</label>
+        <input type="radio" id="yellow2" value="yellow2" v-model="color2">
+        <label for="yellow2">yellow2</label>
+        <hr>
+        <select v-model="selected" multiple>
+            <option disavled value="">select one</option>
+            <option>red</option>
+            <option>green</option>
+            <option>yellow</option>
+
+        </select>
+
         <p>
             {{ counter }}
         </p>
+        <!-- 複数行の場合はpreを使いtextarea -->
         <p>
             {{ message }}
         </p>
-        <button v-on:click.once="clickHandler($event, 'testvuejs')">
+        <input type="text" v-model="message">
+        <button v-on:click="clickHandler($event, 'testvuejs')">
             clickhandler
         </button>
+        <button @click="clickHandler($event, 'testvuejs')">
+            省略記法
+        </button>
+        <hr>
+        <!-- keyコード27はESCキー escでも可 -->
+        <input type="text" v-on:keyup.esc.space.up="clear" v-model="message">
        <!-- debug -->
        <hr>
        <pre>{{ $data }}</pre>
