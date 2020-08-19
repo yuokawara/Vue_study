@@ -51,13 +51,17 @@
                 routes: [
                 {
                     path: '/top',
-                    component: Top
+                    component: Top,
+                    // リダイレクト
+                    redirect: { name: 'profilepage' }
                 },
                 {
+                    name: 'userpage',
                     path: '/users/:userId',
                     component: User,
                     children: [
                         {
+                            name: 'profilepage',
                             path: 'profile',
                             component: Profile,
                         },
